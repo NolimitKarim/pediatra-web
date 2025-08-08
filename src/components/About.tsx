@@ -8,23 +8,24 @@ const About = () => {
     {
       icon: GraduationCap,
       title: "Educación",
-      description: "Universidad Nacional de Medicina, Especialización en Pediatría"
+      description:
+        "Universidad Nacional de Medicina, Especialización en Pediatría",
     },
     {
       icon: Award,
       title: "Certificaciones",
-      description: "Certificada por el Consejo Mexicano de Pediatría"
+      description: "Certificada por el Consejo Mexicano de Pediatría",
     },
     {
       icon: Users,
       title: "Experiencia",
-      description: "Más de 5,000 niños atendidos en 15 años de práctica"
+      description: "Más de 5,000 niños atendidos en 15 años de práctica",
     },
     {
       icon: Clock,
       title: "Dedicación",
-      description: "Atención personalizada y seguimiento continuo"
-    }
+      description: "Atención personalizada y seguimiento continuo",
+    },
   ];
 
   return (
@@ -35,18 +36,20 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-gradient">
-                Conoce a la Dra. María González
+                Conoce a la Dra. Nubia Rangel
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Con más de 15 años de experiencia en pediatría, me dedico a brindar atención médica 
-                integral y especializada para el cuidado de la salud infantil. Mi filosofía se basa 
-                en crear un ambiente cálido y seguro donde los niños se sientan cómodos y los padres 
+                Con más de 15 años de experiencia en pediatría, me dedico a
+                brindar atención médica integral y especializada para el cuidado
+                de la salud infantil. Mi filosofía se basa en crear un ambiente
+                cálido y seguro donde los niños se sientan cómodos y los padres
                 encuentren confianza.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Creo firmemente que cada niño es único y merece una atención personalizada. Me 
-                especializo en el seguimiento del desarrollo, prevención de enfermedades y 
-                promoción de hábitos saludables desde temprana edad.
+                Creo firmemente que cada niño es único y merece una atención
+                personalizada. Me especializo en el seguimiento del desarrollo,
+                prevención de enfermedades y promoción de hábitos saludables
+                desde temprana edad.
               </p>
             </div>
 
@@ -54,7 +57,10 @@ const About = () => {
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
-                  <Card key={index} className="card-gradient shadow-soft hover:shadow-medium transition-smooth">
+                  <Card
+                    key={index}
+                    className="card-gradient shadow-soft hover:shadow-medium transition-smooth"
+                  >
                     <CardContent className="p-4">
                       <div className="flex items-start space-x-3">
                         <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -85,9 +91,9 @@ const About = () => {
           {/* Right image */}
           <div className="relative">
             <div className="relative">
-              <img 
+              <img
                 src={doctorPortrait}
-                alt="Dra. María González - Pediatra"
+                alt="Dra. Nubia Rangel - Pediatra"
                 className="w-full max-w-md mx-auto rounded-3xl shadow-strong"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-3xl max-w-md mx-auto"></div>

@@ -12,13 +12,16 @@ const Footer = () => {
                 <Heart className="w-5 h-5 text-secondary-foreground" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Dr. María González</h3>
-                <p className="text-primary-foreground/80">Pediatra Especialista</p>
+                <h3 className="text-xl font-bold">Dr. Nubia Rangel</h3>
+                <p className="text-primary-foreground/80">
+                  Pediatra Especialista
+                </p>
               </div>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed">
-              Comprometida con el cuidado y bienestar de la salud infantil. 
-              Más de 15 años de experiencia brindando atención pediátrica especializada.
+              Comprometida con el cuidado y bienestar de la salud infantil. Más
+              de 15 años de experiencia brindando atención pediátrica
+              especializada.
             </p>
           </div>
 
@@ -28,16 +31,21 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-secondary" />
-                <span className="text-primary-foreground/80">(555) 123-4567</span>
+                <span className="text-primary-foreground/80">
+                  (555) 123-4567
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-secondary" />
-                <span className="text-primary-foreground/80">dra.gonzalez@pediatria.com</span>
+                <span className="text-primary-foreground/80">
+                  dra.gonzalez@pediatria.com
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-secondary" />
                 <span className="text-primary-foreground/80">
-                  123 Calle Principal, Col. Centro<br />
+                  123 Calle Principal, Col. Centro
+                  <br />
                   Ciudad de México, CDMX
                 </span>
               </div>
@@ -62,7 +70,8 @@ const Footer = () => {
               </div>
               <div className="mt-3 p-3 bg-primary-foreground/10 rounded-lg">
                 <p className="text-sm">
-                  <span className="font-semibold">Emergencias:</span> Disponible 24/7 para consultas urgentes
+                  <span className="font-semibold">Emergencias:</span> Disponible
+                  24/7 para consultas urgentes
                 </p>
               </div>
             </div>
@@ -71,7 +80,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/70">
-            © 2024 Dr. María González - Pediatría. Todos los derechos reservados.
+            © 2024 Dr. Nubia Rangel - Pediatría. Todos los derechos reservados.
           </p>
           <p className="text-sm text-primary-foreground/60 mt-2">
             Sitio web creado con ❤️ para el cuidado de la salud infantil

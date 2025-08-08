@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
   Calendar,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
 
 const Contact = () => {
@@ -17,26 +17,26 @@ const Contact = () => {
       icon: Phone,
       title: "Teléfono",
       details: "(555) 123-4567",
-      subtitle: "Llamadas y WhatsApp"
+      subtitle: "WhatsApp",
     },
     {
       icon: Mail,
       title: "Email",
-      details: "dra.gonzalez@pediatria.com",
-      subtitle: "Respuesta en 24 horas"
+      details: "nubia.rangel@test.com",
+      subtitle: "Respuesta en 24 horas",
     },
     {
       icon: MapPin,
       title: "Ubicación",
       details: "123 Calle Principal, Col. Centro",
-      subtitle: "Ciudad de México, CDMX"
+      subtitle: "Querétaro, Qro.",
     },
     {
       icon: Clock,
       title: "Horarios",
       details: "Lun-Vie: 8:00-18:00",
-      subtitle: "Sáb: 9:00-14:00"
-    }
+      subtitle: "Sáb: 9:00-14:00",
+    },
   ];
 
   return (
@@ -47,8 +47,8 @@ const Contact = () => {
             Contacto y Citas
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Estoy aquí para responder tus preguntas y agendar la consulta de tu pequeño. 
-            No dudes en contactarme.
+            Estoy aquí para responder tus preguntas y agendar la consulta de tu
+            pequeño. No dudes en contactarme.
           </p>
         </div>
 
@@ -59,7 +59,10 @@ const Contact = () => {
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
-                  <Card key={index} className="card-gradient shadow-soft hover:shadow-medium transition-smooth">
+                  <Card
+                    key={index}
+                    className="card-gradient shadow-soft hover:shadow-medium transition-smooth"
+                  >
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
@@ -132,7 +135,7 @@ const Contact = () => {
                   <Input placeholder="(555) 123-4567" />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-medium text-card-foreground">
                   Email
@@ -151,7 +154,7 @@ const Contact = () => {
                 <label className="text-sm font-medium text-card-foreground">
                   Motivo de la consulta
                 </label>
-                <Textarea 
+                <Textarea
                   placeholder="Describe brevemente el motivo de la consulta o cualquier pregunta que tengas..."
                   rows={4}
                 />

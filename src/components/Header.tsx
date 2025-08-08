@@ -27,26 +27,44 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 hero-gradient rounded-full flex items-center justify-center">
-              <span className="text-xl font-bold text-primary-foreground">P+</span>
+              <span className="text-xl font-bold text-primary-foreground">
+                P+
+              </span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gradient">Dr. María González</h1>
-              <p className="text-sm text-muted-foreground">Pediatra Especialista</p>
+              <h1 className="text-2xl font-bold text-gradient">
+                Dr. Nubia Rangel
+              </h1>
+              <p className="text-sm text-muted-foreground">
+                Pediatra Especialista
+              </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#inicio" className="text-foreground hover:text-primary transition-smooth font-medium">
+            <a
+              href="#inicio"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
               Inicio
             </a>
-            <a href="#sobre-mi" className="text-foreground hover:text-primary transition-smooth font-medium">
+            <a
+              href="#sobre-mi"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
               Sobre Mí
             </a>
-            <a href="#servicios" className="text-foreground hover:text-primary transition-smooth font-medium">
+            <a
+              href="#servicios"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
               Servicios
             </a>
-            <a href="#contacto" className="text-foreground hover:text-primary transition-smooth font-medium">
+            <a
+              href="#contacto"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
               Contacto
             </a>
           </nav>

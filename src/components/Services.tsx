@@ -1,14 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Stethoscope, 
-  Heart, 
-  Activity, 
-  Shield, 
-  Syringe, 
+import {
+  Stethoscope,
+  Heart,
+  Activity,
+  Shield,
+  Syringe,
   Brain,
   Eye,
-  Ear
+  Ear,
 } from "lucide-react";
 
 const Services = () => {
@@ -16,51 +16,59 @@ const Services = () => {
     {
       icon: Stethoscope,
       title: "Consulta Pediátrica General",
-      description: "Evaluación completa del estado de salud, crecimiento y desarrollo de tu hijo.",
-      color: "bg-primary"
+      description:
+        "Evaluación completa del estado de salud, crecimiento y desarrollo de tu hijo.",
+      color: "bg-primary",
     },
     {
       icon: Syringe,
       title: "Vacunación",
-      description: "Esquema completo de vacunación según el calendario oficial y recomendaciones internacionales.",
-      color: "bg-accent"
+      description:
+        "Esquema completo de vacunación según el calendario oficial y recomendaciones internacionales.",
+      color: "bg-accent",
     },
     {
       icon: Activity,
       title: "Control de Crecimiento",
-      description: "Seguimiento del desarrollo físico, mental y emocional en cada etapa de la infancia.",
-      color: "bg-secondary"
+      description:
+        "Seguimiento del desarrollo físico, mental y emocional en cada etapa de la infancia.",
+      color: "bg-secondary",
     },
-    {
-      icon: Heart,
-      title: "Cardiología Pediátrica",
-      description: "Evaluación y seguimiento de problemas cardíacos congénitos y adquiridos en niños.",
-      color: "bg-primary"
-    },
-    {
-      icon: Brain,
-      title: "Neurología Pediátrica",
-      description: "Diagnóstico y tratamiento de trastornos del sistema nervioso en la infancia.",
-      color: "bg-accent"
-    },
+    // Se comenta para quitar componente del frontend
+    // {
+    //   icon: Heart,
+    //   title: "Cardiología Pediátrica",
+    //   description: "Evaluación y seguimiento de problemas cardíacos congénitos y adquiridos en niños.",
+    //   color: "bg-primary"
+    // },
+    // {
+    //   icon: Brain,
+    //   title: "Neurología Pediátrica",
+    //   description:
+    //     "Diagnóstico y tratamiento de trastornos del sistema nervioso en la infancia.",
+    //   color: "bg-accent",
+    // },
     {
       icon: Shield,
       title: "Medicina Preventiva",
-      description: "Programas de prevención y promoción de hábitos saludables desde temprana edad.",
-      color: "bg-secondary"
+      description:
+        "Programas de prevención y promoción de hábitos saludables desde temprana edad.",
+      color: "bg-secondary",
     },
     {
       icon: Eye,
       title: "Oftalmología Pediátrica",
-      description: "Revisión y cuidado de la salud visual, detección temprana de problemas oculares.",
-      color: "bg-primary"
+      description:
+        "Revisión y cuidado de la salud visual, detección temprana de problemas oculares.",
+      color: "bg-primary",
     },
     {
       icon: Ear,
       title: "Otorrinolaringología",
-      description: "Tratamiento de problemas del oído, nariz y garganta en niños y adolescentes.",
-      color: "bg-accent"
-    }
+      description:
+        "Tratamiento de problemas del oído, nariz y garganta en niños y adolescentes.",
+      color: "bg-accent",
+    },
   ];
 
   return (
@@ -71,8 +79,8 @@ const Services = () => {
             Servicios Especializados
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ofrezco una amplia gama de servicios pediátricos para asegurar el bienestar 
-            integral de tu hijo en cada etapa de su desarrollo.
+            Ofrezco una amplia gama de servicios pediátricos para asegurar el
+            bienestar integral de tu hijo en cada etapa de su desarrollo.
           </p>
         </div>
 
@@ -80,12 +88,14 @@ const Services = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="card-gradient shadow-soft hover:shadow-medium transition-smooth hover:-translate-y-2 group cursor-pointer"
               >
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-bounce`}>
+                  <div
+                    className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-bounce`}
+                  >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-lg font-semibold text-card-foreground">
