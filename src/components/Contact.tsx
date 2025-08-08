@@ -43,11 +43,10 @@ const Contact = () => {
     <section id="contacto" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold">
-            <span className="animate-title">Contacto</span>
-            <span className="block text-foreground">y Citas</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient">
+            Contacto y Citas
           </h2>
-          <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto font-light">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Estoy aquí para responder tus preguntas y agendar la consulta de tu pequeño. 
             No dudes en contactarme.
           </p>

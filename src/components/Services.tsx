@@ -67,11 +67,10 @@ const Services = () => {
     <section id="servicios" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold">
-            <span className="animate-title">Servicios</span>
-            <span className="block text-foreground">Especializados</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient">
+            Servicios Especializados
           </h2>
-          <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto font-light">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ofrezco una amplia gama de servicios pediátricos para asegurar el bienestar 
             integral de tu hijo en cada etapa de su desarrollo.
           </p>
@@ -89,12 +88,12 @@ const Services = () => {
                   <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-bounce`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-lg font-display font-semibold text-card-foreground">
+                  <CardTitle className="text-lg font-semibold text-card-foreground">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-body text-muted-foreground text-center leading-relaxed font-light">
+                  <p className="text-muted-foreground text-center leading-relaxed">
                     {service.description}
                   </p>
                 </CardContent>

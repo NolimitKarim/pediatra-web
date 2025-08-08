@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary-light shadow-elegant hover:shadow-soft transition-smooth",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-smooth",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-elegant",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-border bg-background hover:bg-accent/10 hover:text-accent-foreground shadow-elegant hover:shadow-soft transition-smooth",
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-elegant hover:shadow-soft transition-smooth",
-        ghost: "hover:bg-accent/10 hover:text-accent-foreground transition-smooth",
-        link: "text-primary underline-offset-4 hover:underline transition-smooth",
-        hero: "hero-gradient text-primary-foreground font-display font-semibold shadow-medium hover:shadow-strong transition-bounce hover:-translate-y-1 hover:scale-105",
-        appointment: "bg-accent text-accent-foreground font-display font-semibold shadow-soft hover:shadow-medium hover:bg-accent-light transition-smooth hover:scale-105",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft transition-smooth",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+        hero: "hero-gradient text-primary-foreground font-semibold shadow-medium hover:shadow-strong transition-bounce hover:-translate-y-1",
+        appointment: "bg-accent text-accent-foreground font-semibold shadow-soft hover:shadow-medium transition-smooth hover:scale-105",
       },
       size: {
         default: "h-10 px-4 py-2",

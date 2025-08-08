@@ -32,19 +32,18 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-display font-bold">
-                <span className="animate-title">Conoce a la</span>
-                <span className="block text-foreground">Dra. María González</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gradient">
+                Conoce a la Dra. María González
               </h2>
-              <p className="text-lg font-body text-muted-foreground leading-relaxed font-light">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Con más de 15 años de experiencia en pediatría, me dedico a brindar atención médica 
                 integral y especializada para el cuidado de la salud infantil. Mi filosofía se basa 
                 en crear un ambiente cálido y seguro donde los niños se sientan cómodos y los padres 
                 encuentren confianza.
               </p>
-              <p className="text-lg font-body text-muted-foreground leading-relaxed font-light">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Creo firmemente que cada niño es único y merece una atención personalizada. Me 
                 especializo en el seguimiento del desarrollo, prevención de enfermedades y 
                 promoción de hábitos saludables desde temprana edad.
