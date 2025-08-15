@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Clock, MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="w-full bg-card shadow-soft sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -70,7 +73,11 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-3">
-            <Button variant="appointment" className="hidden md:inline-flex">
+            <Button
+              variant="appointment"
+              className="hidden md:inline-flex"
+              onClick={() => navigate("/AgendarCita")} // 👈 Ruta exacta
+            >
               Agendar Cita
             </Button>
             <Button variant="ghost" size="icon" className="lg:hidden">

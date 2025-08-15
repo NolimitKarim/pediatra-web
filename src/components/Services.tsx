@@ -55,20 +55,21 @@ const Services = () => {
         "Programas de prevención y promoción de hábitos saludables desde temprana edad.",
       color: "bg-secondary",
     },
-    {
-      icon: Eye,
-      title: "Oftalmología Pediátrica",
-      description:
-        "Revisión y cuidado de la salud visual, detección temprana de problemas oculares.",
-      color: "bg-primary",
-    },
-    {
-      icon: Ear,
-      title: "Otorrinolaringología",
-      description:
-        "Tratamiento de problemas del oído, nariz y garganta en niños y adolescentes.",
-      color: "bg-accent",
-    },
+    // Se comenta para quitar componente del frontend
+    // {
+    //   icon: Eye,
+    //   title: "Oftalmología Pediátrica",
+    //   description:
+    //     "Revisión y cuidado de la salud visual, detección temprana de problemas oculares.",
+    //   color: "bg-primary",
+    // },
+    // {
+    //   icon: Ear,
+    //   title: "Otorrinolaringología",
+    //   description:
+    //     "Tratamiento de problemas del oído, nariz y garganta en niños y adolescentes.",
+    //   color: "bg-accent",
+    // },
   ];
 
   return (

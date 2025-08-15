@@ -10,6 +10,7 @@ import {
   Calendar,
   MessageCircle,
 } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
   const contactInfo = [
@@ -38,6 +39,80 @@ const Contact = () => {
       subtitle: "Sáb: 9:00-14:00",
     },
   ];
+
+  // Estado para los campos del formulario
+  const [form, setForm] = useState({
+    nombre: "",
+    telefono: "",
+    email: "",
+    nino: "",
+    edad: "",
+    motivo: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  // Validaciones
+  const validate = () => {
+    const newErrors: { [key: string]: string } = {};
+
+    // Email
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(form.email)) {
+      newErrors.email = "Ingresa un email válido";
+    }
+
+    // Teléfono (solo dígitos, mínimo 10)
+    const phoneDigits = form.telefono.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      newErrors.telefono = "El teléfono debe tener al menos 10 dígitos";
+    }
+
+    // Edad (mayor que 0 y menor de 18)
+    const edadNum = parseInt(form.edad, 10);
+    if (isNaN(edadNum) || edadNum <= 0 || edadNum >= 18) {
+      newErrors.edad = "La edad debe ser mayor que 0 y menor de 18";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Maneja cambios en los inputs
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Maneja el envío del formulario
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+    setLoading(true);
+    setSuccess(false);
+    try {
+      await fetch("http://localhost:5678/webhook/webhook-cita", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      setSuccess(true);
+      setForm({
+        nombre: "",
+        telefono: "",
+        email: "",
+        nino: "",
+        edad: "",
+        motivo: "",
+      });
+      setErrors({});
+    } catch (err) {
+      // Manejo de error opcional
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contacto" className="py-20 bg-muted/30">
@@ -113,7 +188,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="card-gradient shadow-medium">
+          <Card className="shadow-medium">
             <CardHeader>
               <CardTitle>Envía un Mensaje</CardTitle>
               <p className="text-muted-foreground">
@@ -121,49 +196,112 @@ const Contact = () => {
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-card-foreground">
+                      Nombre del Padre/Madre
+                    </label>
+                    <Input
+                      name="nombre"
+                      placeholder="Tu nombre completo"
+                      value={form.nombre}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-card-foreground">
+                      Teléfono
+                    </label>
+                    <Input
+                      name="telefono"
+                      placeholder="(555) 123-4567"
+                      value={form.telefono}
+                      onChange={handleChange}
+                      required
+                    />
+                    {errors.telefono && (
+                      <p className="text-red-500 text-xs">{errors.telefono}</p>
+                    )}
+                  </div>
+                </div>
+
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-card-foreground">
-                    Nombre del Padre/Madre
+                    Email
                   </label>
-                  <Input placeholder="Tu nombre completo" />
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="tu.email@ejemplo.com"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-xs">{errors.email}</p>
+                  )}
                 </div>
+
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-card-foreground">
-                    Teléfono
+                    Nombre del paciente
                   </label>
-                  <Input placeholder="(555) 123-4567" />
+                  <Input
+                    name="nino"
+                    placeholder="Ej: Ana Rangel"
+                    value={form.nino}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-card-foreground">
-                  Email
-                </label>
-                <Input type="email" placeholder="tu.email@ejemplo.com" />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-card-foreground">
+                    Edad
+                  </label>
+                  <Input
+                    name="edad"
+                    placeholder="Ej: 5 años"
+                    value={form.edad}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.edad && (
+                    <p className="text-red-500 text-xs">{errors.edad}</p>
+                  )}
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-card-foreground">
-                  Nombre y edad del niño(a)
-                </label>
-                <Input placeholder="Ej: Ana, 5 años" />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-card-foreground">
+                    Motivo de la consulta
+                  </label>
+                  <Textarea
+                    name="motivo"
+                    placeholder="Describe brevemente el motivo de la consulta o cualquier pregunta que tengas..."
+                    rows={4}
+                    value={form.motivo}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-card-foreground">
-                  Motivo de la consulta
-                </label>
-                <Textarea
-                  placeholder="Describe brevemente el motivo de la consulta o cualquier pregunta que tengas..."
-                  rows={4}
-                />
-              </div>
-
-              <Button variant="hero" className="w-full">
-                <Mail className="w-4 h-4 mr-2" />
-                Enviar Mensaje
-              </Button>
+                <Button
+                  variant="hero"
+                  className="w-full"
+                  type="submit"
+                  disabled={loading}
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  {loading ? "Enviando..." : "Enviar Mensaje"}
+                </Button>
+                {success && (
+                  <p className="text-green-600 text-center text-sm mt-2">
+                    ¡Mensaje enviado correctamente!
+                  </p>
+                )}
+              </form>
             </CardContent>
           </Card>
         </div>
